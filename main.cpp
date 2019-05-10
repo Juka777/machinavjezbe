@@ -14,6 +14,7 @@ public:
 
 	}
 
+	int mVelocity;
 	int x, y, velocity, hp,strength;
 	std::string userName;
 	
@@ -28,6 +29,25 @@ public:
 	{
 		hp -= ammount;
 	}
+
+	std::string getPrivateString()
+	{
+
+		return _privateString;
+	}
+
+	void setPrivateString(std::string stringParam)
+	{
+
+		_privateString = stringParam;
+	}
+
+private:
+
+	std::string _privateString;
+	
+
+
 };
 
 
@@ -43,8 +63,13 @@ int main()
 	playerTwo.strength = 11;
 	playerOne.move();
 	playerTwo.move();
+
+	playerOne.setPrivateString("Ja sam privatan !");
+
 	std::string losingPlayer;
 	std::string winningPlayer;
+
+	std::cout << playerOne.getPrivateString() << std::endl;
 
 	while (playerOne.hp > 0 && playerTwo.hp > 0 )
 	{
